@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediConnect - Project Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Portfolio</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <button class="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </button>
+    </nav>
+
+    <!-- Project Details -->
+    <section class="project-details">
+        <div class="container">
+            <!-- Project Header -->
+            <div class="project-header">
+                <div class="header-content">
+                    <h1 class="project-title">MediConnect</h1>
+                    <div class="project-meta">
+                        <span class="category">Healthcare</span>
+                        <span class="year">2024</span>
+                    </div>
+                    <div class="tech-stack">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>PostgreSQL</span>
+                        <span>WebSocket</span>
+                        <span>Docker</span>
+                    </div>
+                </div>
+                <div class="header-3d">
+                    <canvas id="mediconnect-3d"></canvas>
+                </div>
+            </div>
+
+            <!-- Project Gallery -->
+            <div class="project-gallery">
+                <div class="main-image">
+                    <img src="mediconnect-main.jpg" alt="MediConnect Main Interface">
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="mediconnect-feature1.jpg" alt="Video Consultation">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="mediconnect-feature2.jpg" alt="Health Records">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="mediconnect-feature3.jpg" alt="Appointment Booking">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Overview Section -->
+                <div class="content-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-info-circle"></i>
+                        Project Overview
+                    </h2>
+                    <p>A comprehensive healthcare platform connecting patients with healthcare providers, offering video consultations, appointment scheduling, and digital health records management.</p>
+                </div>
+
+                <!-- Key Features Section -->
+                <div class="content-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-star"></i>
+                        Key Features
+                    </h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-video feature-icon"></i>
+                            <h3>Video Consultations</h3>
+                            <p>High-quality video calls with healthcare professionals from anywhere.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-calendar-check feature-icon"></i>
+                            <h3>Smart Scheduling</h3>
+                            <p>Intelligent appointment booking system with automated reminders.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-file-medical feature-icon"></i>
+                            <h3>Digital Records</h3>
+                            <p>Secure storage and management of medical history and prescriptions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Details Section -->
+                <div class="content-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-code"></i>
+                        Technical Implementation
+                    </h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-database feature-icon"></i>
+                            <h3>Backend Architecture</h3>
+                            <p>Microservices-based architecture with PostgreSQL for data storage.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt feature-icon"></i>
+                            <h3>Security</h3>
+                            <p>HIPAA-compliant security measures and end-to-end encryption.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-sync feature-icon"></i>
+                            <h3>Real-time Features</h3>
+                            <p>WebSocket implementation for live chat and notifications.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impact Section -->
+                <div class="content-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Project Impact
+                    </h2>
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <div class="impact-number">1M+</div>
+                            <h3>Users Served</h3>
+                            <p>Healthcare platform users</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-number">50K+</div>
+                            <h3>Consultations</h3>
+                            <p>Video consultations completed</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-number">95%</div>
+                            <h3>Satisfaction Rate</h3>
+                            <p>User satisfaction score</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Navigation -->
+            <div class="project-navigation">
+                <a href="ambulance.html" class="nav-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Previous Project
+                </a>
+                <a href="web-scraping.html" class="nav-btn">
+                    Next Project
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</body>
+</html> 

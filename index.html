@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium 3D Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="dark-mode">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">Portfolio</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#cybersecurity">Security</a>
+            <a href="#contact">Contact</a>
+            <button class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="bg-grid"></div>
+            <div class="bg-lines"></div>
+            <div class="bg-particles"></div>
+            <div class="bg-cyber-sphere"></div>
+            <canvas id="matrix-rain"></canvas>
+            <div class="hologram-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="profile-section">
+                <div class="profile-circle">
+                    <div class="profile-image">
+                        <img src="img/mypf.jpg" alt="Profile Picture">
+                    </div>
+                </div>
+            </div>
+            <div class="hero-text">
+                <div class="text-container">
+                    <h1 class="animated-text">
+                        <span class="text-line glitch-text">Creative</span>
+                        <span class="text-line glitch-text">Developer</span>
+                    </h1>
+                    <p class="subtitle">Native Android App Developer</p>
+                    <div class="hero-description">
+                        <p>Transforming ideas into secure, high-performance mobile applications with a focus on user experience and cybersecurity.</p>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#projects" class="cta-btn primary">
+                            <span class="btn-content">
+                                <span>View Projects</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                            <div class="btn-glow"></div>
+                        </a>
+                        <a href="#contact" class="cta-btn secondary">
+                            <span class="btn-content">
+                                <span>Get in Touch</span>
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <div class="btn-glow"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="tech-stack-preview">
+                <div class="tech-icon">
+                    <div class="icon-wrapper">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <span>Android</span>
+                </div>
+                <div class="tech-icon">
+                    <div class="icon-wrapper">
+                        <i class="fab fa-kotlin"></i>
+                    </div>
+                    <span>Kotlin</span>
+                </div>
+                <div class="tech-icon">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <span>Security</span>
+                </div>
+                <div class="tech-icon">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <span>UI/UX</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="scroll-text">Scroll Down</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="glass-card">
+            <h2>About Me</h2>
+            <p class="bio">I'm a passionate native Android developer and cybersecurity enthusiast, dedicated to creating secure, high-performance mobile applications. My expertise spans from crafting intuitive user interfaces to implementing robust security measures, ensuring both functionality and protection in every project.</p>
+            <div class="skills-container">
+                <div class="skill">
+                    <span class="skill-name">Android Studio</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="95"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span class="skill-name">Kotlin</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="90"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span class="skill-name">Kali Linux</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="92"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span class="skill-name">Penetration Testing</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="88"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span class="skill-name">Network Security</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="85"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span class="skill-name">UI/UX Design</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="90"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="floating-icons">
+            <i class="fab fa-android"></i>
+            <i class="fas fa-shield-alt"></i>
+            <i class="fas fa-bug"></i>
+            <i class="fas fa-network-wired"></i>
+            <i class="fas fa-lock"></i>
+            <i class="fas fa-code"></i>
+        </div>
+        <div class="cyber-particles"></div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="section-title">
+            <h2>Featured Projects</h2>
+            <div class="title-decoration"></div>
+        </div>
+        <div class="projects-grid">
+            <!-- Ride-Booking App -->
+            <div class="project-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="project-image">
+                            <img src="img/ride.webp" alt="Ride-Booking App">
+                            <div class="project-overlay">
+                                <a href="ride-booking.html" class="view-project">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3>Ride-Booking App</h3>
+                        <p>A comprehensive ride-booking application with real-time tracking and secure payments.</p>
+                        <div class="project-features">
+                            <span>Kotlin</span>
+                            <span>Firebase</span>
+                            <span>Google Maps</span>
+                        </div>
+                        <a href="ride-booking.html" class="project-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission Planner -->
+            <div class="project-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="project-image">
+                            <img src="img/mission.webp" alt="Mission Planner">
+                            <div class="project-overlay">
+                                <div class="tech-stack">
+                                    <span>MAVLink</span>
+                                    <span>DroneKit</span>
+                                    <span>UDP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3>🛩️ Mission Planner</h3>
+                        <p>SOS Navigation System with real-time coordinate transmission to Mission Planner software.</p>
+                        <div class="project-features">
+                            <span>SOS Coordinates</span>
+                            <span>Real-time Tracking</span>
+                            <span>Flight Path Prediction</span>
+                        </div>
+                        <a href="mission-planner.html" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GenAI Financial Assistant -->
+            <div class="project-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="project-image">
+                            <img src="img/stock.webp" alt="GenAI Financial Assistant">
+                            <div class="project-overlay">
+                                <div class="tech-stack">
+                                    <span>GenAI</span>
+                                    <span>Kotlin</span>
+                                    <span>Stock API</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3>💰 GenAI Financial Assistant</h3>
+                        <p>AI-driven investment platform with real-time market insights and personalized suggestions.</p>
+                        <div class="project-features">
+                            <span>AI Analysis</span>
+                            <span>Market Insights</span>
+                            <span>Smart Chatbot</span>
+                        </div>
+                        <a href="genai.html" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart Ambulance System -->
+            <div class="project-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="project-image">
+                            <img src="img/amb.webp" alt="Smart Ambulance System">
+                            <div class="project-overlay">
+                                <div class="tech-stack">
+                                    <span>Ktor</span>
+                                    <span>AI</span>
+                                    <span>Maps API</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3>🚑 Smart Ambulance System</h3>
+                        <p>Emergency response system with AI-powered route optimization and hospital bed availability.</p>
+                        <div class="project-features">
+                            <span>Live GPS</span>
+                            <span>AI Routes</span>
+                            <span>Emergency SOS</span>
+                        </div>
+                        <a href="ambulance.html" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MediConnect -->
+            <div class="project-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="project-image">
+                            <img src="img/medi.webp" alt="MediConnect">
+                            <div class="project-overlay">
+                                <div class="tech-stack">
+                                    <span>PostgreSQL</span>
+                                    <span>Firebase</span>
+                                    <span>Kotlin</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3>🔗 MediConnect</h3>
+                        <p>Healthcare platform connecting patients with doctors and pharmacies.</p>
+                        <div class="project-features">
+                            <span>Patient Matching</span>
+                            <span>Digital Prescriptions</span>
+                            <span>Pharmacy Integration</span>
+                        </div>
+                        <a href="mediconnect.html" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Scraping Tool -->
+            <div class="project-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="project-image">
+                            <img src="img/webserap.webp" alt="Web Scraping Tool">
+                            <div class="project-overlay">
+                                <div class="tech-stack">
+                                    <span>Python</span>
+                                    <span>TOR</span>
+                                    <span>Selenium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3>🕵️ Secure Web Scraping</h3>
+                        <p>Anonymous data extraction tool using TOR network with IP rotation.</p>
+                        <div class="project-features">
+                            <span>TOR Integration</span>
+                            <span>IP Rotation</span>
+                            <span>Ethical Scraping</span>
+                        </div>
+                        <a href="web-scraping.html" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cybersecurity Section -->
+    <section id="cybersecurity" class="cybersecurity">
+        <div class="terminal">
+            <div class="terminal-header">
+                <span class="terminal-title">Security Console</span>
+                <div class="terminal-controls">
+                    <span class="control close"></span>
+                    <span class="control minimize"></span>
+                    <span class="control maximize"></span>
+                </div>
+            </div>
+            <div class="terminal-content">
+                <div class="matrix-effect"></div>
+                <div class="terminal-text"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>mohamedasif7799@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+91 9344058212</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Modal -->
+    <div class="game-modal" id="gameModal">
+        <div class="game-container">
+            <div class="game-header">
+                <h3>Cyber Runner</h3>
+                <button class="close-game">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <canvas id="gameCanvas"></canvas>
+            <div class="game-controls">
+                <button class="game-btn" id="startGame">Start Game</button>
+                <div class="game-score">Score: <span id="score">0</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
