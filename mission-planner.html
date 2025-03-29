@@ -3,136 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mission Planner - Project Details</title>
+    <title>Mission Planner - Premium Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .project-container {
+            min-height: 100vh;
+            padding: 8rem 2rem 2rem;
+            background: linear-gradient(135deg, var(--bg-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-shadow: var(--neon-shadow);
+        }
+
+        .project-description {
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .project-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            background: rgba(0, 255, 157, 0.05);
+            border-radius: 20px;
+            border: 2px solid rgba(0, 255, 157, 0.2);
+            box-shadow: 0 0 30px rgba(0, 255, 157, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 255, 157, 0.2);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .project-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .project-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .feature-item {
+            background: rgba(0, 255, 157, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-item {
+            background: rgba(0, 255, 157, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            color: var(--text-color);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: var(--primary-color);
+            color: var(--bg-color);
+            transform: translateY(-2px);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-link {
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            background: var(--primary-color);
+            color: var(--bg-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 157, 0.3);
+        }
+
+        .project-link i {
+            font-size: 1.2rem;
+        }
+
+        .resume-btn {
+            background: var(--primary-color);
+            color: var(--bg-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .resume-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 157, 0.3);
+        }
+
+        .resume-btn i {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+
+            .project-features {
+                grid-template-columns: 1fr;
+            }
+
+            .resume-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="dark-mode">
+    <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">Portfolio</div>
+        <div class="nav-brand">Portfolio</div>
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="games.html">Games</a>
+            <a href="resume.pdf" class="resume-btn" download>
+                <i class="fas fa-download"></i>
+                Resume
+            </a>
+            <button class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
-        <button class="theme-toggle">
-            <i class="fas fa-moon"></i>
-        </button>
     </nav>
 
-    <div class="project-details" data-project="mission-planner">
-        <div class="container">
-            <div class="project-header">
-                <h1 class="project-title">Mission Planner</h1>
-                <div class="project-meta">
-                    <span class="category">Drone Navigation</span>
-                    <span class="year">2024</span>
+    <div class="project-container">
+        <div class="project-header">
+            <h1 class="project-title">Mission Planner</h1>
+            <p class="project-description">
+                An advanced mission planning tool that helps teams organize, track, and execute complex projects 
+                with precision and efficiency.
+            </p>
+        </div>
+
+        <div class="project-content">
+            <div class="project-image">
+                <img src="mission-planner.jpg" alt="Mission Planner">
+            </div>
+
+            <div class="project-details">
+                <div class="project-features">
+                    <div class="feature-item">
+                        <i class="fas fa-tasks"></i>
+                        <span>Task Management</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-users"></i>
+                        <span>Team Collaboration</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Progress Tracking</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Timeline Planning</span>
+                    </div>
                 </div>
+
                 <div class="tech-stack">
-                    <span>Kotlin</span>
-                    <span>MAVLink</span>
-                    <span>DroneKit</span>
-                    <span>UDP</span>
-                    <span>Google Maps</span>
-                </div>
-            </div>
-
-            <div class="project-gallery">
-                <div class="main-image">
-                    <img src="mission-main.jpg" alt="Mission Planner Main Image">
-                </div>
-                <div class="gallery-grid">
-                    <img src="mission-1.jpg" alt="Mission Planner Screenshot 1">
-                    <img src="mission-2.jpg" alt="Mission Planner Screenshot 2">
-                    <img src="mission-3.jpg" alt="Mission Planner Screenshot 3">
-                </div>
-            </div>
-
-            <div class="project-content">
-                <div class="project-overview">
-                    <h2>Project Overview</h2>
-                    <p>A sophisticated drone navigation system that enables real-time coordinate transmission to Mission Planner software. The app provides precise flight path planning, SOS navigation, and real-time tracking capabilities for unmanned aerial vehicles.</p>
+                    <span class="tech-item">Vue.js</span>
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">PostgreSQL</span>
+                    <span class="tech-item">Django</span>
+                    <span class="tech-item">D3.js</span>
+                    <span class="tech-item">WebSocket</span>
                 </div>
 
-                <div class="key-features">
-                    <h2>Key Features</h2>
-                    <ul>
-                        <li>Real-time coordinate transmission</li>
-                        <li>Flight path prediction and optimization</li>
-                        <li>SOS navigation system</li>
-                        <li>Weather condition monitoring</li>
-                        <li>Battery life tracking</li>
-                        <li>Emergency landing zones</li>
-                        <li>Geofencing capabilities</li>
-                        <li>Flight data logging</li>
-                    </ul>
+                <div class="project-links">
+                    <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Live Demo
+                    </a>
+                    <a href="#" class="project-link">
+                        <i class="fab fa-github"></i>
+                        Source Code
+                    </a>
                 </div>
-
-                <div class="technical-details">
-                    <h2>Technical Details</h2>
-                    <ul>
-                        <li>Native Android app using Kotlin</li>
-                        <li>MAVLink protocol implementation</li>
-                        <li>DroneKit SDK integration</li>
-                        <li>UDP communication for real-time data</li>
-                        <li>Google Maps SDK for visualization</li>
-                        <li>Custom flight algorithms</li>
-                        <li>Data persistence with Room</li>
-                        <li>Background service for continuous monitoring</li>
-                    </ul>
-                </div>
-
-                <div class="security-features">
-                    <h2>Security Features</h2>
-                    <ul>
-                        <li>Encrypted communication channels</li>
-                        <li>Secure authentication system</li>
-                        <li>Flight data protection</li>
-                        <li>Anti-tampering measures</li>
-                        <li>Regular security updates</li>
-                        <li>Access control management</li>
-                        <li>Data backup and recovery</li>
-                        <li>Compliance with aviation regulations</li>
-                    </ul>
-                </div>
-
-                <div class="project-challenges">
-                    <h2>Challenges & Solutions</h2>
-                    <ul>
-                        <li>Real-time data synchronization</li>
-                        <li>GPS accuracy optimization</li>
-                        <li>Battery consumption management</li>
-                        <li>Weather condition integration</li>
-                        <li>Emergency response protocols</li>
-                    </ul>
-                </div>
-
-                <div class="project-impact">
-                    <h2>Project Impact</h2>
-                    <ul>
-                        <li>Improved flight safety</li>
-                        <li>Enhanced navigation accuracy</li>
-                        <li>Reduced operational risks</li>
-                        <li>Better emergency response</li>
-                        <li>Increased mission success rate</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="project-navigation">
-                <a href="genai.html" class="prev-project">
-                    <i class="fas fa-arrow-left"></i>
-                    Previous Project
-                </a>
-                <a href="mediconnect.html" class="next-project">
-                    Next Project
-                    <i class="fas fa-arrow-right"></i>
-                </a>
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
