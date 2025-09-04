@@ -136,20 +136,40 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(terminalElement);
     }
 
-    // Form Submission
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
+ // Form Submission with EmailJS
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.querySelector('#contact-form'); // Your form ID
+    const submitBtn = document.querySelector('#submit-btn');     // Your button ID
+
+    if (contactForm && submitBtn) {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
 
-            // Simulate form submission
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            try {
+                // Send email using EmailJS
+                await emailjs.sendForm(
+                    "service_ib3lc5f",
+                    "template_u1n158w",
+                    contactForm,
+                    "SgpdzoVZOmaDb47JW"
+                );
 
-            submitBtn.textContent = 'Message Sent!';
-            contactForm.reset();
+                // If you want to send to another template as well
+                await emailjs.sendForm(
+                    "service_ib3lc5f",
+                    "template_qpp2x4i",
+                    contactForm,
+                    "SgpdzoVZOmaDb47JW"
+                );
+
+                submitBtn.textContent = 'Message Sent!';
+                contactForm.reset();
+            } catch (error) {
+                console.error("EmailJS Error:", error);
+                submitBtn.textContent = 'Failed! Try Again';
+            }
 
             setTimeout(() => {
                 submitBtn.disabled = false;
@@ -157,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 3000);
         });
     }
+});
 
     // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
